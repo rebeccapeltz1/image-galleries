@@ -1,0 +1,61 @@
+/* Row wrap horizontally */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  padding: 10px 10%;
+}
+
+.heading-text {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.heading-text span {
+  font-weight: 100;
+}
+
+.image-title {
+  text-align: center;
+}
+
+/* remove bullets from list items */
+ul {
+  list-style: none;
+}
+
+/* wrap the items around in rows */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-gallery > li {
+  /* prevent width overflow */
+  flex-basis: 350px;
+  border: 1px solid black;
+}
+
+.image-gallery li img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* align images in last row when item count isn't the same */
+.image-gallery::after {
+  content: "";
+  flex-basis: 350px;
+}
+
